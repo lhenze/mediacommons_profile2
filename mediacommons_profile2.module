@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the MediaCommons Profile2 feature.
+ */
+
+include_once 'mediacommons_profile2.features.inc';
