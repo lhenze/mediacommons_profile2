@@ -42,6 +42,37 @@ function mediacommons_profile2_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_contactinfo|profile2|mediacommonsprofile|account';
+  $field_group->group_name = 'group_contactinfo';
+  $field_group->entity_type = 'profile2';
+  $field_group->bundle = 'mediacommonsprofile';
+  $field_group->mode = 'account';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'contactinfo',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_telephone',
+      1 => 'field_skype',
+      2 => 'field_twitter',
+      3 => 'field_email',
+      4 => 'field_url',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'contactinfo',
+      'instance_settings' => array(
+        'classes' => 'contact-info',
+        'element' => 'ul',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_contactinfo|profile2|mediacommonsprofile|account'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_contactinfo|profile2|mediacommonsprofile|default';
   $field_group->group_name = 'group_contactinfo';
   $field_group->entity_type = 'profile2';
@@ -50,7 +81,7 @@ function mediacommons_profile2_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'contact info',
-    'weight' => '5',
+    'weight' => '3',
     'children' => array(
       0 => 'field_telephone',
       1 => 'field_skype',
