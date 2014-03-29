@@ -50,7 +50,7 @@ function mediacommons_profile2_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'contactinfo',
-    'weight' => '3',
+    'weight' => '5',
     'children' => array(
       0 => 'field_telephone',
       1 => 'field_skype',
