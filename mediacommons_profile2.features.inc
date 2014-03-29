@@ -24,6 +24,38 @@ function mediacommons_profile2_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function mediacommons_profile2_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: profile_page_pic.
+  $styles['profile_page_pic'] = array(
+    'name' => 'profile_page_pic',
+    'label' => 'Profile page pic',
+    'effects' => array(
+      1 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 100,
+          'height' => 100,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_default_profile2_type().
  */
 function mediacommons_profile2_default_profile2_type() {
