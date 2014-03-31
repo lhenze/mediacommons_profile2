@@ -389,7 +389,7 @@ function mediacommons_profile2_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'url',
         'settings' => array(
-          'nofollow' => FALSE,
+          'nofollow' => 0,
           'trim_length' => 80,
         ),
         'type' => 'url_default',
