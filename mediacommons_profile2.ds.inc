@@ -429,5 +429,69 @@ function mediacommons_profile2_ds_layout_settings_info() {
   );
   $export['profile2|mediacommonsprofile|form'] = $ds_layout;
 
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'user|user|default';
+  $ds_layout->entity_type = 'user';
+  $ds_layout->bundle = 'user';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'profile_mediacommonsprofile',
+      ),
+    ),
+    'fields' => array(
+      'profile_mediacommonsprofile' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        'profile' => 'profile',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'article',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 0,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['user|user|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'user|user|form';
+  $ds_layout->entity_type = 'user';
+  $ds_layout->bundle = 'user';
+  $ds_layout->view_mode = 'form';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'account',
+        1 => 'picture',
+        2 => 'timezone',
+        3 => 'profile_mediacommonsprofile',
+      ),
+    ),
+    'fields' => array(
+      'account' => 'ds_content',
+      'picture' => 'ds_content',
+      'timezone' => 'ds_content',
+      'profile_mediacommonsprofile' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => TRUE,
+    'layout_link_attribute' => FALSE,
+    'layout_link_custom' => '',
+  );
+  $export['user|user|form'] = $ds_layout;
+
   return $export;
 }

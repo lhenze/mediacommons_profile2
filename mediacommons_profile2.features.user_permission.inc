@@ -10,6 +10,17 @@
 function mediacommons_profile2_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'access user profiles'.
+  $permissions['access user profiles'] = array(
+    'name' => 'access user profiles',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'contributor' => 'contributor',
+    ),
+    'module' => 'user',
+  );
+
   // Exported permission: 'administer profile types'.
   $permissions['administer profile types'] = array(
     'name' => 'administer profile types',
