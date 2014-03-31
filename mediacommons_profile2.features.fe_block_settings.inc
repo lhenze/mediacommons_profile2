@@ -27,12 +27,6 @@ function mediacommons_profile2_default_fe_block_settings() {
         'theme' => 'babyzen',
         'weight' => 0,
       ),
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
