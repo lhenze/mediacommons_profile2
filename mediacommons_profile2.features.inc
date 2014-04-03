@@ -69,7 +69,8 @@ function mediacommons_profile2_default_profile2_type() {
     "type" : "mediacommonsprofile",
     "label" : "MediaCommons Profile",
     "weight" : "0",
-    "data" : { "registration" : 1, "use_page" : 0 }
+    "data" : { "registration" : 1, "use_page" : 0 },
+    "rdf_mapping" : []
   }');
   return $items;
 }

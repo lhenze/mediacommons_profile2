@@ -14,8 +14,9 @@ function mediacommons_profile2_user_default_permissions() {
   $permissions['access user profiles'] = array(
     'name' => 'access user profiles',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin' => 'admin',
       'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
       'contributor' => 'contributor',
     ),
     'module' => 'user',
@@ -25,7 +26,7 @@ function mediacommons_profile2_user_default_permissions() {
   $permissions['administer profile types'] = array(
     'name' => 'administer profile types',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin' => 'admin',
     ),
     'module' => 'profile2',
   );
@@ -34,7 +35,7 @@ function mediacommons_profile2_user_default_permissions() {
   $permissions['administer profiles'] = array(
     'name' => 'administer profiles',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin' => 'admin',
     ),
     'module' => 'profile2',
   );
@@ -43,7 +44,7 @@ function mediacommons_profile2_user_default_permissions() {
   $permissions['edit any mediacommonsprofile profile'] = array(
     'name' => 'edit any mediacommonsprofile profile',
     'roles' => array(
-      'administrator' => 'administrator',
+      'admin' => 'admin',
     ),
     'module' => 'profile2',
   );
@@ -52,6 +53,7 @@ function mediacommons_profile2_user_default_permissions() {
   $permissions['edit own mediacommonsprofile profile'] = array(
     'name' => 'edit own mediacommonsprofile profile',
     'roles' => array(
+      'admin' => 'admin',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'profile2',
@@ -61,6 +63,7 @@ function mediacommons_profile2_user_default_permissions() {
   $permissions['view any mediacommonsprofile profile'] = array(
     'name' => 'view any mediacommonsprofile profile',
     'roles' => array(
+      'admin' => 'admin',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
     ),
@@ -71,6 +74,7 @@ function mediacommons_profile2_user_default_permissions() {
   $permissions['view own mediacommonsprofile profile'] = array(
     'name' => 'view own mediacommonsprofile profile',
     'roles' => array(
+      'admin' => 'admin',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
     ),
