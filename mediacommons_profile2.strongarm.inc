@@ -23,10 +23,10 @@ function mediacommons_profile2_strongarm() {
         'custom_settings' => FALSE,
       ),
       'page' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'teaser' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'token' => array(
         'custom_settings' => FALSE,
@@ -37,10 +37,31 @@ function mediacommons_profile2_strongarm() {
       'mcuserpic' => array(
         'custom_settings' => FALSE,
       ),
+      'testing' => array(
+        'custom_settings' => FALSE,
+      ),
+      'contributors_list_item' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),
-      'display' => array(),
+      'display' => array(
+        '*' => array(
+          'default' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '11',
+            'visible' => FALSE,
+          ),
+          'account' => array(
+            'weight' => '12',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_profile2__mediacommonsprofile'] = $strongarm;
@@ -52,16 +73,25 @@ function mediacommons_profile2_strongarm() {
   $strongarm->value = array(
     'view_modes' => array(
       'full' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
       'token' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'mcuserpic' => array(
         'custom_settings' => FALSE,
+      ),
+      'contributors_list_item' => array(
+        'custom_settings' => TRUE,
+      ),
+      'user_list_item' => array(
+        'custom_settings' => FALSE,
+      ),
+      'teaser' => array(
+        'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(
@@ -85,10 +115,76 @@ function mediacommons_profile2_strongarm() {
             'weight' => '2',
             'visible' => TRUE,
           ),
+          'full' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'contributors_list_item' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+          'token' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+          'user_list_item' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
         ),
         'summary' => array(
           'default' => array(
             'weight' => '6',
+            'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '5',
+            'visible' => FALSE,
+          ),
+          'contributors_list_item' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'token' => array(
+            'weight' => '6',
+            'visible' => FALSE,
+          ),
+          'user_list_item' => array(
+            'weight' => '7',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '7',
+            'visible' => FALSE,
+          ),
+        ),
+        'profile_mini_profile' => array(
+          'contributors_list_item' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '6',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'token' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'user_list_item' => array(
+            'weight' => '6',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '0',
             'visible' => FALSE,
           ),
         ),
@@ -101,14 +197,21 @@ function mediacommons_profile2_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'install_profile';
-  $strongarm->value = 'standard';
+  $strongarm->value = 'mediacommons_profile';
   $export['install_profile'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'realname_pattern';
+  $strongarm->value = '[user:profile-mediacommonsprofile:field-full-name]';
+  $export['realname_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'user_admin_role';
-  $strongarm->value = '5';
+  $strongarm->value = '3';
   $export['user_admin_role'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -122,7 +225,7 @@ function mediacommons_profile2_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_picture_default';
-  $strongarm->value = '';
+  $strongarm->value = 'sites/default/interfaceimages/the-new-everyday-sq.gif';
   $export['user_picture_default'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -157,7 +260,7 @@ function mediacommons_profile2_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_picture_style';
-  $strongarm->value = 'thumbnail';
+  $strongarm->value = 'profile_page_pic';
   $export['user_picture_style'] = $strongarm;
 
   return $export;
