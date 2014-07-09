@@ -355,7 +355,7 @@ function mediacommons_profile2_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 10,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -414,7 +414,7 @@ function mediacommons_profile2_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_plain',
-        'weight' => 4,
+        'weight' => 9,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -471,7 +471,7 @@ function mediacommons_profile2_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 11,
       ),
       'default' => array(
         'label' => 'hidden',

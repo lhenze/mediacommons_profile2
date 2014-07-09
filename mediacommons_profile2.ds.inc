@@ -12,26 +12,6 @@ function mediacommons_profile2_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'profile2|mediacommons_editor_profile|default';
-  $ds_fieldsetting->entity_type = 'profile2';
-  $ds_fieldsetting->bundle = 'mediacommons_editor_profile';
-  $ds_fieldsetting->view_mode = 'default';
-  $ds_fieldsetting->settings = array(
-    'comments_from_user' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'content_from_user' => array(
-      'weight' => '2',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-  );
-  $export['profile2|mediacommons_editor_profile|default'] = $ds_fieldsetting;
-
-  $ds_fieldsetting = new stdClass();
-  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'profile2|mediacommonsprofile|account';
   $ds_fieldsetting->entity_type = 'profile2';
   $ds_fieldsetting->bundle = 'mediacommonsprofile';
@@ -50,12 +30,7 @@ function mediacommons_profile2_ds_field_settings_info() {
     'field_email' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'fi' => TRUE,
-          'fi-el' => 'li',
-          'fi-cl' => '',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
+          'func' => 'theme_ds_field_minimal',
         ),
       ),
     ),
@@ -98,48 +73,28 @@ function mediacommons_profile2_ds_field_settings_info() {
     'field_skype' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'fi' => TRUE,
-          'fi-el' => 'li',
-          'fi-cl' => '',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
+          'func' => 'theme_ds_field_minimal',
         ),
       ),
     ),
     'field_telephone' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'fi' => TRUE,
-          'fi-el' => 'li',
-          'fi-cl' => '',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
+          'func' => 'theme_ds_field_minimal',
         ),
       ),
     ),
     'field_twitter' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'fi' => TRUE,
-          'fi-el' => 'li',
-          'fi-cl' => '',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
+          'func' => 'theme_ds_field_minimal',
         ),
       ),
     ),
     'field_url' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'fi' => TRUE,
-          'fi-el' => 'li',
-          'fi-cl' => '',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
+          'func' => 'theme_ds_field_minimal',
         ),
       ),
     ),
@@ -158,12 +113,7 @@ function mediacommons_profile2_ds_field_settings_info() {
     'field_full_name' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'fi' => TRUE,
-          'fi-el' => 'h1',
-          'fi-cl' => 'p-name fn',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
+          'func' => 'theme_ds_field_minimal',
         ),
       ),
     ),
@@ -209,37 +159,6 @@ function mediacommons_profile2_ds_custom_fields_info() {
   );
   $export['posts'] = $ds_field;
 
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'user_info';
-  $ds_field->label = 'User info';
-  $ds_field->field_type = 6;
-  $ds_field->entities = array(
-    'profile2' => 'profile2',
-    'user' => 'user',
-  );
-  $ds_field->ui_limit = '*|*';
-  $ds_field->properties = array(
-    'block' => 'views|user_info-block',
-    'block_render' => '3',
-  );
-  $export['user_info'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'user_name_and_pic';
-  $ds_field->label = 'User name and pic';
-  $ds_field->field_type = 6;
-  $ds_field->entities = array(
-    'profile2' => 'profile2',
-  );
-  $ds_field->ui_limit = '';
-  $ds_field->properties = array(
-    'block' => 'views|user_name_and_pic-block',
-    'block_render' => '3',
-  );
-  $export['user_name_and_pic'] = $ds_field;
-
   return $export;
 }
 
@@ -248,62 +167,6 @@ function mediacommons_profile2_ds_custom_fields_info() {
  */
 function mediacommons_profile2_ds_layout_settings_info() {
   $export = array();
-
-  $ds_layout = new stdClass();
-  $ds_layout->api_version = 1;
-  $ds_layout->id = 'profile2|mediacommons_editor_profile|default';
-  $ds_layout->entity_type = 'profile2';
-  $ds_layout->bundle = 'mediacommons_editor_profile';
-  $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'ds_1col';
-  $ds_layout->settings = array(
-    'regions' => array(
-      'ds_content' => array(
-        0 => 'field_explanation',
-        1 => 'comments_from_user',
-        2 => 'content_from_user',
-      ),
-    ),
-    'fields' => array(
-      'field_explanation' => 'ds_content',
-      'comments_from_user' => 'ds_content',
-      'content_from_user' => 'ds_content',
-    ),
-    'classes' => array(
-      'layout_class' => array(
-        '' => '',
-      ),
-    ),
-    'wrappers' => array(
-      'ds_content' => 'div',
-    ),
-    'layout_wrapper' => 'div',
-    'layout_attributes' => '',
-    'layout_attributes_merge' => 1,
-    'layout_link_attribute' => '',
-    'layout_link_custom' => '',
-  );
-  $export['profile2|mediacommons_editor_profile|default'] = $ds_layout;
-
-  $ds_layout = new stdClass();
-  $ds_layout->api_version = 1;
-  $ds_layout->id = 'profile2|mediacommons_editor_profile|form';
-  $ds_layout->entity_type = 'profile2';
-  $ds_layout->bundle = 'mediacommons_editor_profile';
-  $ds_layout->view_mode = 'form';
-  $ds_layout->layout = 'ds_1col';
-  $ds_layout->settings = array(
-    'regions' => array(),
-    'fields' => array(),
-    'classes' => array(),
-    'wrappers' => array(),
-    'layout_wrapper' => 'div',
-    'layout_attributes' => '',
-    'layout_attributes_merge' => TRUE,
-    'layout_link_attribute' => FALSE,
-    'layout_link_custom' => '',
-  );
-  $export['profile2|mediacommons_editor_profile|form'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -320,19 +183,19 @@ function mediacommons_profile2_ds_layout_settings_info() {
         2 => 'field_job_title',
         3 => 'field_organization',
         4 => 'field_location',
-        5 => 'field_telephone',
-        6 => 'group_contactinfo',
-        7 => 'field_skype',
-        8 => 'field_twitter',
-        11 => 'field_email',
-        12 => 'field_url',
+        5 => 'group_contactinfo',
+        7 => 'field_email',
+        10 => 'field_url',
+        11 => 'field_telephone',
+        12 => 'field_skype',
+        13 => 'field_twitter',
       ),
       'left' => array(
-        9 => 'posts',
-        10 => 'comments_from_user',
+        6 => 'posts',
+        8 => 'comments_from_user',
       ),
       'right' => array(
-        13 => 'field_embed',
+        9 => 'field_embed',
       ),
     ),
     'fields' => array(
@@ -341,23 +204,19 @@ function mediacommons_profile2_ds_layout_settings_info() {
       'field_job_title' => 'header',
       'field_organization' => 'header',
       'field_location' => 'header',
-      'field_telephone' => 'header',
       'group_contactinfo' => 'header',
+      'posts' => 'left',
+      'field_email' => 'header',
+      'comments_from_user' => 'left',
+      'field_embed' => 'right',
+      'field_url' => 'header',
+      'field_telephone' => 'header',
       'field_skype' => 'header',
       'field_twitter' => 'header',
-      'posts' => 'left',
-      'comments_from_user' => 'left',
-      'field_email' => 'header',
-      'field_url' => 'header',
-      'field_embed' => 'right',
     ),
     'classes' => array(
       'layout_class' => array(
         'profile' => 'profile',
-      ),
-      'header' => array(
-        'h-card' => 'h-card',
-        'vcard' => 'vcard',
       ),
     ),
     'wrappers' => array(
@@ -407,66 +266,6 @@ function mediacommons_profile2_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
-  $ds_layout->id = 'profile2|mediacommonsprofile|form';
-  $ds_layout->entity_type = 'profile2';
-  $ds_layout->bundle = 'mediacommonsprofile';
-  $ds_layout->view_mode = 'form';
-  $ds_layout->layout = 'ds_1col';
-  $ds_layout->settings = array(
-    'regions' => array(
-      'ds_content' => array(
-        0 => 'group_profile2',
-        1 => 'field_email',
-        2 => 'field_url',
-        3 => 'field_telephone',
-        4 => 'field_skype',
-        5 => 'field_twitter',
-        6 => 'group_basicinfo',
-        7 => 'group_contact',
-        8 => 'field_full_name',
-        9 => 'field_user_avatar',
-        10 => 'field_job_title',
-        11 => 'field_organization',
-        12 => '_add_existing_field',
-        13 => 'field_location',
-        14 => 'field_embed',
-      ),
-    ),
-    'fields' => array(
-      'group_profile2' => 'ds_content',
-      'field_email' => 'ds_content',
-      'field_url' => 'ds_content',
-      'field_telephone' => 'ds_content',
-      'field_skype' => 'ds_content',
-      'field_twitter' => 'ds_content',
-      'group_basicinfo' => 'ds_content',
-      'group_contact' => 'ds_content',
-      'field_full_name' => 'ds_content',
-      'field_user_avatar' => 'ds_content',
-      'field_job_title' => 'ds_content',
-      'field_organization' => 'ds_content',
-      '_add_existing_field' => 'ds_content',
-      'field_location' => 'ds_content',
-      'field_embed' => 'ds_content',
-    ),
-    'classes' => array(
-      'layout_class' => array(
-        '' => '',
-      ),
-    ),
-    'wrappers' => array(
-      'ds_content' => 'div',
-    ),
-    'layout_wrapper' => 'div',
-    'layout_attributes' => '',
-    'layout_attributes_merge' => 1,
-    'layout_link_attribute' => '',
-    'layout_link_custom' => '',
-  );
-  $export['profile2|mediacommonsprofile|form'] = $ds_layout;
-
-  $ds_layout = new stdClass();
-  $ds_layout->api_version = 1;
   $ds_layout->id = 'user|user|default';
   $ds_layout->entity_type = 'user';
   $ds_layout->bundle = 'user';
@@ -496,46 +295,6 @@ function mediacommons_profile2_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['user|user|default'] = $ds_layout;
-
-  $ds_layout = new stdClass();
-  $ds_layout->api_version = 1;
-  $ds_layout->id = 'user|user|form';
-  $ds_layout->entity_type = 'user';
-  $ds_layout->bundle = 'user';
-  $ds_layout->view_mode = 'form';
-  $ds_layout->layout = 'ds_1col';
-  $ds_layout->settings = array(
-    'regions' => array(
-      'ds_content' => array(
-        0 => 'account',
-        1 => 'picture',
-        2 => 'timezone',
-        3 => 'profile_mediacommonsprofile',
-        4 => '_add_existing_field',
-      ),
-    ),
-    'fields' => array(
-      'account' => 'ds_content',
-      'picture' => 'ds_content',
-      'timezone' => 'ds_content',
-      'profile_mediacommonsprofile' => 'ds_content',
-      '_add_existing_field' => 'ds_content',
-    ),
-    'classes' => array(
-      'layout_class' => array(
-        '' => '',
-      ),
-    ),
-    'wrappers' => array(
-      'ds_content' => 'div',
-    ),
-    'layout_wrapper' => 'div',
-    'layout_attributes' => '',
-    'layout_attributes_merge' => 1,
-    'layout_link_attribute' => '',
-    'layout_link_custom' => '',
-  );
-  $export['user|user|form'] = $ds_layout;
 
   return $export;
 }
