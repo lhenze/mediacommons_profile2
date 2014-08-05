@@ -28,7 +28,8 @@ function mediacommons_profile2_field_group_info() {
       2 => 'field_organization',
       3 => 'field_user_avatar',
       4 => 'field_full_name',
-      5 => 'field_embed',
+      5 => 'field_research_interests',
+      6 => 'field_bio',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

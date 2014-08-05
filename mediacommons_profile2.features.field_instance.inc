@@ -10,6 +10,48 @@
 function mediacommons_profile2_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'profile2-mediacommonsprofile-field_bio'
+  $field_instances['profile2-mediacommonsprofile-field_bio'] = array(
+    'bundle' => 'mediacommonsprofile',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'account' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 14,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'profile2',
+    'field_name' => 'field_bio',
+    'label' => 'Bio',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 21,
+    ),
+  );
+
   // Exported field_instance: 'profile2-mediacommonsprofile-field_email'
   $field_instances['profile2-mediacommonsprofile-field_email'] = array(
     'bundle' => 'mediacommonsprofile',
@@ -47,7 +89,7 @@ function mediacommons_profile2_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'profile2',
@@ -65,53 +107,6 @@ function mediacommons_profile2_field_default_field_instances() {
       ),
       'type' => 'email_textfield',
       'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'profile2-mediacommonsprofile-field_embed'
-  $field_instances['profile2-mediacommonsprofile-field_embed'] = array(
-    'bundle' => 'mediacommonsprofile',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'account' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 12,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 10,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'profile2',
-    'field_name' => 'field_embed',
-    'label' => 'Bio',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 20,
     ),
   );
 
@@ -137,10 +132,9 @@ function mediacommons_profile2_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => 'theme_ds_field_minimal',
@@ -198,10 +192,9 @@ function mediacommons_profile2_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'profile2',
@@ -258,10 +251,9 @@ function mediacommons_profile2_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'profile2',
@@ -318,10 +310,9 @@ function mediacommons_profile2_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'profile2',
@@ -340,6 +331,48 @@ function mediacommons_profile2_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 18,
+    ),
+  );
+
+  // Exported field_instance: 'profile2-mediacommonsprofile-field_research_interests'
+  $field_instances['profile2-mediacommonsprofile-field_research_interests'] = array(
+    'bundle' => 'mediacommonsprofile',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'account' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 8,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 13,
+      ),
+    ),
+    'ds_extras_field_template' => 'theme_field',
+    'entity_type' => 'profile2',
+    'field_name' => 'field_research_interests',
+    'label' => 'Research Interests',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 20,
     ),
   );
 
@@ -380,7 +413,7 @@ function mediacommons_profile2_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'profile2',
@@ -439,7 +472,7 @@ function mediacommons_profile2_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'profile2',
@@ -496,7 +529,7 @@ function mediacommons_profile2_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'profile2',
@@ -561,7 +594,7 @@ function mediacommons_profile2_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 13,
       ),
     ),
     'entity_type' => 'profile2',
@@ -608,13 +641,9 @@ function mediacommons_profile2_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 0,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -624,7 +653,7 @@ function mediacommons_profile2_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 1714,
+      'default_image' => 1740,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -661,6 +690,7 @@ function mediacommons_profile2_field_default_field_instances() {
   t('Job Title');
   t('Location');
   t('Organization');
+  t('Research Interests');
   t('Skype');
   t('Twitter');
   t('URL');

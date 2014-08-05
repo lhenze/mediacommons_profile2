@@ -26,7 +26,7 @@ function mediacommons_profile2_strongarm() {
         'custom_settings' => FALSE,
       ),
       'teaser' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'token' => array(
         'custom_settings' => FALSE,
@@ -53,11 +53,11 @@ function mediacommons_profile2_strongarm() {
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '11',
+            'weight' => '8',
             'visible' => FALSE,
           ),
           'account' => array(
-            'weight' => '12',
+            'weight' => '11',
             'visible' => FALSE,
           ),
         ),
@@ -79,7 +79,7 @@ function mediacommons_profile2_strongarm() {
         'custom_settings' => FALSE,
       ),
       'token' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'mcuserpic' => array(
         'custom_settings' => FALSE,
@@ -91,7 +91,7 @@ function mediacommons_profile2_strongarm() {
         'custom_settings' => FALSE,
       ),
       'teaser' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
     ),
     'extra_fields' => array(
@@ -142,7 +142,7 @@ function mediacommons_profile2_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '5',
+            'weight' => '4',
             'visible' => FALSE,
           ),
           'contributors_list_item' => array(
