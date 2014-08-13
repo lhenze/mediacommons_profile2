@@ -80,7 +80,7 @@ function mediacommons_profile2_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
-      'max_length' => 50,
+      'max_length' => 40,
       'profile2_private' => 0,
     ),
     'translatable' => 0,

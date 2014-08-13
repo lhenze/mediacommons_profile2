@@ -12,25 +12,19 @@ function mediacommons_profile2_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['views-comments_from_user-block'] = array(
+  $export['views-783e95e3e282810c938596811d9f3226'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'comments_from_user-block',
+    'delta' => '783e95e3e282810c938596811d9f3226',
     'module' => 'views',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'babyzen' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'babyzen',
-        'weight' => -1,
-      ),
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
+      'mediacommons' => array(
+        'region' => 'homepage_sidebar',
+        'status' => 1,
+        'theme' => 'mediacommons',
         'weight' => 0,
       ),
       'rubik' => array(
@@ -38,24 +32,6 @@ function mediacommons_profile2_default_fe_block_settings() {
         'status' => 0,
         'theme' => 'rubik',
         'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'tao' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'tao',
-        'weight' => 0,
-      ),
-      'tne' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'tne',
-        'weight' => -1,
       ),
       'zen' => array(
         'region' => '',
@@ -68,50 +44,26 @@ function mediacommons_profile2_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['views-df75a8fe563cd0ce79e677d48c01879d'] = array(
+  $export['views-comments_from_user-block'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'df75a8fe563cd0ce79e677d48c01879d',
+    'delta' => 'comments_from_user-block',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '<front>',
+    'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'babyzen' => array(
+      'mediacommons' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'babyzen',
-        'weight' => 0,
-      ),
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
+        'theme' => 'mediacommons',
+        'weight' => -1,
       ),
       'rubik' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'rubik',
         'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'tao' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'tao',
-        'weight' => 0,
-      ),
-      'tne' => array(
-        'region' => 'homepage_sidebar',
-        'status' => 1,
-        'theme' => 'tne',
-        'weight' => -15,
       ),
       'zen' => array(
         'region' => '',
@@ -121,7 +73,39 @@ function mediacommons_profile2_default_fe_block_settings() {
       ),
     ),
     'title' => '',
-    'visibility' => 1,
+    'visibility' => 0,
+  );
+
+  $export['views-mc_posts_from_user-block'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'mc_posts_from_user-block',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'mediacommons' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'mediacommons',
+        'weight' => 0,
+      ),
+      'rubik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'rubik',
+        'weight' => 0,
+      ),
+      'zen' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'zen',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
   );
 
   $export['views-profiles_in_a_cluster-block_1'] = array(
@@ -135,41 +119,17 @@ function mediacommons_profile2_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'babyzen' => array(
+      'mediacommons' => array(
         'region' => 'sidebar_first',
         'status' => 1,
-        'theme' => 'babyzen',
-        'weight' => 0,
-      ),
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
+        'theme' => 'mediacommons',
+        'weight' => -16,
       ),
       'rubik' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'rubik',
         'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'tao' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'tao',
-        'weight' => 0,
-      ),
-      'tne' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'tne',
-        'weight' => -16,
       ),
       'zen' => array(
         'region' => '',
@@ -191,40 +151,16 @@ function mediacommons_profile2_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'babyzen' => array(
+      'mediacommons' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'babyzen',
-        'weight' => 0,
-      ),
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
+        'theme' => 'mediacommons',
         'weight' => 0,
       ),
       'rubik' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'rubik',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'tao' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'tao',
-        'weight' => 0,
-      ),
-      'tne' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'tne',
         'weight' => 0,
       ),
       'zen' => array(
@@ -247,41 +183,17 @@ function mediacommons_profile2_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'babyzen' => array(
+      'mediacommons' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'babyzen',
+        'theme' => 'mediacommons',
         'weight' => 1,
-      ),
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
       ),
       'rubik' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'rubik',
         'weight' => -15,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'tao' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'tao',
-        'weight' => 0,
-      ),
-      'tne' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'tne',
-        'weight' => 1,
       ),
       'zen' => array(
         'region' => '',

@@ -17,6 +17,21 @@ function mediacommons_profile2_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'mediacommonsprofile';
   $ds_fieldsetting->view_mode = 'account';
   $ds_fieldsetting->settings = array(
+    'posts' => array(
+      'weight' => '6',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'section',
+          'ow-cl' => 'posts',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
     'comments_from_user' => array(
       'weight' => '7',
       'label' => 'hidden',
@@ -31,11 +46,6 @@ function mediacommons_profile2_ds_field_settings_info() {
           'ow-def-at' => FALSE,
         ),
       ),
-    ),
-    'posts' => array(
-      'weight' => '6',
-      'label' => 'hidden',
-      'format' => 'default',
     ),
     'field_email' => array(
       'formatter_settings' => array(
@@ -211,10 +221,28 @@ function mediacommons_profile2_ds_custom_fields_info() {
   );
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
-    'block' => 'views|content_from_user-block',
+    'block' => 'views|mc_posts_from_user-block',
     'block_render' => '2',
   );
   $export['posts'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'taxonomy_content_header';
+  $ds_field->label = 'Taxonomy Content Header';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'taxonomy_term' => 'taxonomy_term',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<h2 class="block-title">Articles with this tag</h2>',
+      'format' => 'full_html',
+    ),
+    'use_token' => 0,
+  );
+  $export['taxonomy_content_header'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -258,7 +286,7 @@ function mediacommons_profile2_ds_layout_settings_info() {
         5 => 'group_contactinfo',
         8 => 'field_email',
         10 => 'field_url',
-        11 => 'field_telephone',
+        12 => 'field_telephone',
         13 => 'field_skype',
         14 => 'field_twitter',
       ),
@@ -268,7 +296,7 @@ function mediacommons_profile2_ds_layout_settings_info() {
       ),
       'right' => array(
         9 => 'field_research_interests',
-        12 => 'field_bio',
+        11 => 'field_bio',
       ),
     ),
     'fields' => array(
@@ -283,8 +311,8 @@ function mediacommons_profile2_ds_layout_settings_info() {
       'field_email' => 'header',
       'field_research_interests' => 'right',
       'field_url' => 'header',
-      'field_telephone' => 'header',
       'field_bio' => 'right',
+      'field_telephone' => 'header',
       'field_skype' => 'header',
       'field_twitter' => 'header',
     ),
@@ -391,6 +419,72 @@ function mediacommons_profile2_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['profile2|mediacommonsprofile|form'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|tags|form';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'tags';
+  $ds_layout->view_mode = 'form';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'name',
+        1 => 'description',
+        2 => 'path',
+      ),
+    ),
+    'fields' => array(
+      'name' => 'ds_content',
+      'description' => 'ds_content',
+      'path' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => TRUE,
+    'layout_link_attribute' => FALSE,
+    'layout_link_custom' => '',
+  );
+  $export['taxonomy_term|tags|form'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|tags|full';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'tags';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'description',
+        2 => 'user_profiles_with_this_term',
+        3 => 'taxonomy_content_header',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'description' => 'ds_content',
+      'user_profiles_with_this_term' => 'ds_content',
+      'taxonomy_content_header' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+  );
+  $export['taxonomy_term|tags|full'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;

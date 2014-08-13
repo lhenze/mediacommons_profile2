@@ -356,7 +356,7 @@ function mediacommons_profile2_field_default_field_instances() {
         'weight' => 13,
       ),
     ),
-    'ds_extras_field_template' => 'theme_field',
+    'ds_extras_field_template' => 'theme_ds_field_minimal',
     'entity_type' => 'profile2',
     'field_name' => 'field_research_interests',
     'label' => 'Research Interests',
@@ -653,7 +653,7 @@ function mediacommons_profile2_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 1740,
+      'default_image' => 1741,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
