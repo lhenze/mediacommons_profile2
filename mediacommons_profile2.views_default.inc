@@ -294,6 +294,14 @@ function mediacommons_profile2_views_default_views() {
   $handler->display->display_options['filters']['promote']['expose']['operator'] = 'promote_op';
   $handler->display->display_options['filters']['promote']['expose']['identifier'] = 'promote';
   $handler->display->display_options['filters']['promote']['expose']['required'] = TRUE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'reverse_field_contributors_node';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'hub' => 'hub',
+  );
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
