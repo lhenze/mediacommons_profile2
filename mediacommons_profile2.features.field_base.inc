@@ -327,14 +327,14 @@ function mediacommons_profile2_field_default_field_bases() {
       ),
     ),
     'locked' => 0,
-    'module' => 'imagefield_crop_extended',
+    'module' => 'imagefield_crop',
     'settings' => array(
       'default_image' => 0,
       'profile2_private' => 0,
       'uri_scheme' => 'public',
     ),
     'translatable' => 0,
-    'type' => 'imagefield_crop_extended',
+    'type' => 'imagefield_crop',
   );
 
   return $field_bases;

@@ -664,7 +664,7 @@ function mediacommons_profile2_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'imagefield_crop_extended',
+      'module' => 'imagefield_crop',
       'settings' => array(
         'collapsible' => 1,
         'croparea' => '500x500',
@@ -678,7 +678,7 @@ function mediacommons_profile2_field_default_field_instances() {
         'select_maximum_area' => 1,
         'validate_resolution' => 0,
       ),
-      'type' => 'imagefield_crop_extended_widget',
+      'type' => 'imagefield_crop_widget',
       'weight' => 16,
     ),
   );
